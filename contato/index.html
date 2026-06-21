@@ -572,11 +572,9 @@
       const a = document.getElementById('emailBtn');
       if (!a) return;
       const addr = a.dataset.user + '@' + a.dataset.domain;
-      const qs = new URLSearchParams({
-        subject: 'Contato via site',
-        body: 'Olá, gostaria de falar sobre...'
-      });
-      a.href = 'mailto:' + addr + '?' + qs.toString();
+      const subject = encodeURIComponent('Contato via site');
+      const body = encodeURIComponent('Olá, gostaria de falar sobre...');
+      a.href = 'mailto:' + addr + '?subject=' + subject + '&body=' + body;
     })();
     (function lazySrcForIframe(){
       const ifr = document.getElementById('mapFrame');
