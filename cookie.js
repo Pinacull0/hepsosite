@@ -2,13 +2,11 @@
   // =============================
   // CONFIGURAÇÕES
   // =============================
-  const PRIVACY_URL = "https://hepso.com/politica-de-privacidade";
-  // Ajuste para o SEU domínio raiz (inclua o ponto inicial):
-  // Use ".pinacullo.com" OU ".pinaculo.com"
-  const COOKIE_DOMAIN = ".hepso.com.br";
+  const PRIVACY_URL = "https://hepso.com.br/politica-de-privacidade/";
+  const COOKIE_DOMAIN = /(^|\.)hepso\.com\.br$/.test(location.hostname) ? ".hepso.com.br" : "";
 
   // IDs opcionais de integrações (preencha se usar)
-  const GA4_MEASUREMENT_ID = ""; // ex.: "G-ABCDE12345"
+  const GA4_MEASUREMENT_ID = "G-5STK7VNPTL"; // ex.: "G-ABCDE12345"
   const FB_PIXEL_ID = ""; // ex.: "123456789012345"
 
   // Nome e duração do cookie de preferências
@@ -113,7 +111,9 @@
   let gaLoaded = false;
 
   function enableGA() {
-    if (!GA4_MEASUREMENT_ID || gaLoaded) return;
+    if (!GA4_MEASUREMENT_ID) return;
+    window["ga-disable-" + GA4_MEASUREMENT_ID] = false;
+    if (gaLoaded) return;
     // gtag base
     const s1 = document.createElement("script");
     s1.async = true;
@@ -122,9 +122,6 @@
 
     window.dataLayer = window.dataLayer || [];
     window.gtag = function(){ dataLayer.push(arguments); };
-    gtag("js", new Date());
-    gtag("config", GA4_MEASUREMENT_ID, { anonymize_ip: true });
-
     // Consent Mode básico inicial
     gtag("consent", "default", {
       ad_storage: "denied",
@@ -132,6 +129,8 @@
       wait_for_update: 500
     });
 
+    gtag("js", new Date());
+    gtag("config", GA4_MEASUREMENT_ID, { anonymize_ip: true });
     gaLoaded = true;
   }
 
@@ -421,7 +420,8 @@
       get: getStoredPrefs,
       reset: () => {
         eraseCookie(CONSENT_COOKIE_NAME, { domain: COOKIE_DOMAIN });
-        // Opcional: remover cookies não essenciais
+        applyPrefs(CATEGORIES);
+        // Remove cookies não essenciais
         removeAnalyticsCookies();
         removeMarketingCookies();
         showBanner();
@@ -435,7 +435,7 @@
       showBanner();
     }
 
-    sendVisitTelemetry();
+    // Analytics are enabled only by an explicit consent preference.
   }
 
   function showBanner() {

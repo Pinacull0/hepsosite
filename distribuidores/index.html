@@ -9,13 +9,7 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
   <!-- GA4 no head (único) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5STK7VNPTL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-5STK7VNPTL');
-  </script>
+
 
   <link rel="canonical" href="https://hepso.com.br/distribuidores/" />
   <link rel="alternate" href="https://hepso.com.br/distribuidores/" hreflang="pt-BR" />
@@ -57,48 +51,83 @@
   <meta property="og:description" content="Rede de distribuidores Hepso por região." />
   <meta property="og:url" content="https://hepso.com.br/distribuidores/" />
   <meta property="og:site_name" content="Hepso" />
-  <meta property="og:image" content="https://hepso.com.br/assets/favicon-hepso.png" />
+  <meta property="og:image" content="https://hepso.com.br/assets/hepso25.jpeg" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Distribuidores - Hepso soluções em Metais" />
   <meta name="twitter:description" content="Pontos de venda e suporte autorizado." />
-  <meta name="twitter:image" content="https://hepso.com.br/assets/favicon-hepso.png" />
+  <meta name="twitter:image" content="https://hepso.com.br/assets/hepso25.jpeg" />
 
   <link rel="icon" href="https://hepso.com.br/assets/favicon-hepso.png" sizes="32x32" />
   <meta name="theme-color" content="#e11d2a" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
   <!-- JSON-LD: WebPage + Breadcrumb -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {
-        "@type":"WebPage",
-        "@id":"https://hepso.com.br/distribuidores/#webpage",
-        "url":"https://hepso.com.br/distribuidores/",
-        "name":"Distribuidores | Hepso",
-        "isPartOf":{"@id":"https://hepso.com.br/#website"},
-        "about":{"@id":"https://hepso.com.br/#organization"},
-        "inLanguage":"pt-BR"
-      },
-      {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Início","item":"https://hepso.com.br/"},
-          {"@type":"ListItem","position":2,"name":"Distribuidores","item":"https://hepso.com.br/distribuidores/"}
-        ]
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hepso.com.br/#organization",
+      "name": "Hepso",
+      "url": "https://hepso.com.br/",
+      "logo": "https://hepso.com.br/assets/hepso25.jpeg",
+      "email": "comercial@hepso.com.br",
+      "telephone": "+55 11 94708-7930",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Avenida Padre Anchieta, 760",
+        "addressLocality": "São Bernardo do Campo",
+        "addressRegion": "SP",
+        "postalCode": "09891-650",
+        "addressCountry": "BR"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hepso.com.br/#website",
+      "url": "https://hepso.com.br/",
+      "name": "Hepso",
+      "publisher": {
+        "@id": "https://hepso.com.br/#organization"
+      },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://hepso.com.br/distribuidores/#webpage",
+      "url": "https://hepso.com.br/distribuidores/",
+      "name": "Distribuidores - Hepso soluções em Metais",
+      "inLanguage": "pt-BR",
+      "isPartOf": {
+        "@id": "https://hepso.com.br/#website"
+      },
+      "about": {
+        "@id": "https://hepso.com.br/#organization"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://hepso.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Distribuidores",
+          "item": "https://hepso.com.br/distribuidores/"
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <!-- Fonts e Leaflet CSS com preload -->
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
 
   <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""></noscript>
@@ -271,8 +300,16 @@
       .zap-fab { --fab-size: 56px; bottom: calc(20px + env(safe-area-inset-bottom)); right: calc(14px + env(safe-area-inset-right)); }
     }
   </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Inter:wght@400;500;600;700;800;900&amp;display=swap"><style>[class*="-reveal"]{opacity:1!important;transform:none!important}</style></noscript>
+  <link rel="stylesheet" href="../assets/site-updates.css">
+  <script src="../assets/site-updates.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Ir para o conteúdo</a>
   <main id="app">
 
     <!-- ============== TOPBAR ============== -->
@@ -281,7 +318,7 @@
         <div>Horário: Seg–Sex 08:00–17:00</div>
         <div class="topbar-contact-box">
           <a class="topbar-contact-link" href="tel:+5511947087930">📞 +55 (11) 94708-7930</a>
-          <a class="topbar-contact-link" href="#contato">✉️ Fale Conosco</a>
+          <a class="topbar-contact-link" href="../contato/#trabalhe-conosco">✉️ Trabalhe Conosco</a>
         </div>
       </div>
     </div>
@@ -290,7 +327,7 @@
     <header class="navbar-root" role="navigation">
       <div class="navbar-inner">
         <a class="navbar-brand" href="../" aria-label="Hepso – Início">
-          <img src="../assets/logo-hepso.png" alt="">
+          <img src="../assets/hepso25.webp" alt="Hepso — 25 anos" loading="eager" decoding="async" width="480" height="320">
         </a>
 
         <nav class="navbar-menu" aria-label="principal">
@@ -301,10 +338,19 @@
               Soluções <span class="caret">▾</span>
             </a>
             <div class="dropdown-panel" role="menu">
-              <a class="dropdown-link" href="../produtos" role="menuitem">Produtos</a>
-              <a class="dropdown-link" href="../produtos/acessorios/" role="menuitem">Acessórios</a>
-              <a class="dropdown-link" href="../produtos/racks/" role="menuitem">Racks</a>
+            <a class="dropdown-link" href="../produtos/" role="menuitem">Produtos</a>
+            <a class="dropdown-link" href="../produtos/acessorios/" role="menuitem">Acessórios</a>
+            <a class="dropdown-link" href="../produtos/racks/" role="menuitem">Racks</a>
+            <div class="projects-menu" role="none">
+              <div class="projects-menu-heading"><a class="dropdown-link" href="../produtos/projetos-especiais/" role="menuitem">Projetos avançados</a><button class="projects-toggle" type="button" aria-label="Exibir modelos de projetos avançados" aria-expanded="false">▸</button></div>
+              <div class="projects-submenu" role="menu" aria-label="Projetos avançados">
+                <a class="dropdown-link" href="../produtos/projetos-especiais/" role="menuitem">Projetos especiais</a>
+                <a class="dropdown-link" href="../produtos/projetos-especiais/#rack-customizado" role="menuitem">Rack customizado</a>
+                <a class="dropdown-link" href="../produtos/projetos-especiais/#rack-hibrido" role="menuitem">Rack híbrido</a>
+                <a class="dropdown-link" href="../produtos/projetos-especiais/#rack-edge" role="menuitem">Rack Edge</a>
+              </div>
             </div>
+          </div>
           </div>
           <a class="navbar-menu-link" href="../catalogo-eletronico/" aria-current="page">Catálogo</a>
           <a class="navbar-menu-link" href="./">Distribuidores</a>
@@ -326,16 +372,23 @@
         <a class="navbar-mobile-link" href="../Empresa/">Empresa</a>
         <button class="navbar-mobile-link mobile-collapse-btn" type="button" aria-expanded="false">Soluções ▾</button>
         <div class="mobile-submenu" id="mobileProdutosSub">
-          <a class="navbar-mobile-link" href="../produtos">Produtos</a>
-          <a class="navbar-mobile-link" href="../produtos/acessorios/">Acessórios</a>
-          <a class="navbar-mobile-link" href="../produtos/racks/">Racks</a>
-        </div>
+        <a class="navbar-mobile-link" href="../produtos/">Produtos</a>
+        <a class="navbar-mobile-link" href="../produtos/acessorios/">Acessórios</a>
+        <a class="navbar-mobile-link" href="../produtos/racks/">Racks</a>
+        <details class="mobile-projects"><summary>Projetos avançados</summary>
+          <a class="navbar-mobile-link" href="../produtos/projetos-especiais/">Projetos especiais</a>
+          <a class="navbar-mobile-link" href="../produtos/projetos-especiais/#rack-customizado">Rack customizado</a>
+          <a class="navbar-mobile-link" href="../produtos/projetos-especiais/#rack-hibrido">Rack híbrido</a>
+          <a class="navbar-mobile-link" href="../produtos/projetos-especiais/#rack-edge">Rack Edge</a>
+        </details>
+      </div>
         <a class="navbar-mobile-link" href="../catalogo-eletronico/" aria-current="page">Catálogo</a>
         <a class="navbar-mobile-link" href="./">Distribuidores</a>
         <a class="navbar-mobile-link" href="../contato/">Contato</a>
-        <a class="navbar-mobile-btn" href="../contato/" style="margin-top:22px;">Fale Conosco</a>
+        <a class="navbar-mobile-btn" href="../contato/#trabalhe-conosco" style="margin-top:22px;">Trabalhe Conosco</a>
       </nav>
     </header>
+  <main id="main-content">
 
     <!-- ===== HERO ===== -->
     <section class="hero-slim" id="distribuidores" aria-label="Distribuidores">
@@ -386,11 +439,12 @@
     </section>
 
     <!-- ============== FOOTER ============== -->
-    <footer id="contatoFooter" class="footer-section">
+    </main>
+  <footer id="contatoFooter" class="footer-section">
       <div class="container footer-grid">
         <div>
           <a class="footer-brand" href="../" aria-label="Hepso – Início (rodapé)">
-            <img src="../assets/logo-hepso.png" alt="">
+            <img src="../assets/hepso25.webp" alt="Hepso — 25 anos" loading="lazy" decoding="async" width="480" height="320">
           </a>
           <p>Atuamos nos segmentos de TI, Network, Telecomunicações, Data Center, Segurança Eletrônica e soluções customizadas em metais.</p>
         </div>
@@ -398,7 +452,7 @@
         <div>
           <h3 class="footer-heading">Endereço</h3>
           <p>
-            Avenida Padre Anchieta<br>São Bernardo do Campo – SP<br>
+            Avenida Padre Anchieta, 760<br>São Bernardo do Campo – SP<br>
             CEP 09891650 – BR<br>
             +55 (11) 94708-7930<br>
             <span>comercial&#8203;@&#8203;hepso.com.br</span>
@@ -425,15 +479,15 @@
     </footer>
 
     <!-- Botão WhatsApp -->
-    <a class="zap-fab" href="https://api.whatsapp.com/send/?phone=5511947087930&text&type=phone_number&app_absent=0" target="_blank">
-      <img src="../assets/whatsapp-icon.png" alt="Botão de Whatsapp" width="56" height="56" loading="lazy" />
+    <a class="zap-fab" href="https://api.whatsapp.com/send/?phone=5511947087930&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+      <img src="../assets/whatsapp-icon.png" alt="Botão de Whatsapp" loading="lazy" decoding="async" width="64" height="64">
     </a>
 
     <!-- ===== Scripts ===== -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
     <script src="../cookie.js" defer></script>
-    
+
     <script>
 // ========== ESTILO DO PIN VERDE (INJETADO VIA JS) ==========
 (function addSearchPinStyles() {
@@ -508,36 +562,7 @@
 })();
 
 // ====== Dropdown (desktop)
-(function navbarDropdown() {
-  const dd = document.getElementById('produtosDropdown');
-  if (!dd) return;
-  const btn = dd.querySelector('.menu-dropdown-btn');
-  const panel = dd.querySelector('.dropdown-panel');
-  if (!btn || !panel) return;
-
-  let open = false;
-  const setOpen = v => {
-    open = v;
-    dd.classList.toggle('open', v);
-    btn.setAttribute('aria-expanded', String(v));
-  };
-
-  btn.addEventListener('click', () => setOpen(!open));
-  const supportsHover = matchMedia('(hover:hover)').matches;
-  if (supportsHover) {
-    dd.addEventListener('mouseenter', () => setOpen(true));
-    dd.addEventListener('mouseleave', () => setOpen(false));
-  }
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && open) setOpen(false);
-  });
-  document.addEventListener('click', e => {
-    if (open && !dd.contains(e.target)) setOpen(false);
-  });
-  panel.addEventListener('focusout', e => {
-    if (open && !dd.contains(e.relatedTarget)) setOpen(false);
-  });
-})();
+// Dropdown desktop inicializado em assets/site-updates.js.
 
 // ====================== DADOS (distribuidores) ======================
 const DISTRIBUIDORES = [

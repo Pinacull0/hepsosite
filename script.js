@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const v=slide.querySelector('video');
         if(!v) return;
         if(i===current){
+          if (v.dataset.heroSrc) { v.src = v.dataset.heroSrc; delete v.dataset.heroSrc; v.load(); }
           v.play().catch(()=>{});
         } else {
           v.pause();
@@ -83,10 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Destrava autoplay na primeira interação
     function resumeAll(){
-      slidesEls.forEach(slide=>{
-        const v = slide.querySelector('video');
-        v?.play().catch(()=>{});
-      });
+      syncActiveVideos();
       window.removeEventListener('pointerdown', resumeAll);
       window.removeEventListener('keydown', resumeAll);
     }
@@ -206,46 +204,5 @@ document.addEventListener('DOMContentLoaded', () => {
   })();
 
   // ====== Dropdown (desktop) ======
-  (function navbarDropdown(){
-    const dd=document.getElementById('produtosDropdown'); 
-    if(!dd) return;
-    const btn=dd.querySelector('.menu-dropdown-btn');
-    const panel=dd.querySelector('.dropdown-panel');
-    if (!btn || !panel) return;
-
-    let open=false;
-    const setOpen=(v)=>{
-      open=v; 
-      dd.classList.toggle('open',v);
-      btn.setAttribute('aria-expanded', String(v));
-    };
-
-    btn.addEventListener('click', (e)=>{
-      e.preventDefault();
-      e.stopPropagation();
-      setOpen(!open);
-    });
-
-    const supportsHover = window.matchMedia
-      ? window.matchMedia('(hover:hover)').matches
-      : false;
-
-    if (supportsHover) {
-      dd.addEventListener('mouseenter', ()=>setOpen(true));
-      dd.addEventListener('mouseleave', ()=>setOpen(false));
-    }
-
-    document.addEventListener('keydown',e=>{ 
-      if(e.key==='Escape' && open) setOpen(false); 
-    });
-
-    document.addEventListener('click',e=>{ 
-      if(open && !dd.contains(e.target)) setOpen(false); 
-    });
-
-    panel.addEventListener('focusout',e=>{
-      const rt=e.relatedTarget;
-      if(open && (!rt || !dd.contains(rt))) setOpen(false);
-    });
-  })();
+  // Dropdown desktop inicializado em assets/site-updates.js.
 });
