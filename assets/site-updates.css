@@ -20,8 +20,9 @@
 .mobile-projects summary{cursor:pointer;color:#111;font-weight:700;padding:8px 0}
 .mobile-projects a{display:block;margin:12px 0 12px 8px}
 .navbar-mobile .mobile-submenu{flex-shrink:0}
-.sobre-section{display:block!important;padding:0!important;background:#111}
-.sobre-section .sobre-video{display:block;width:100%;height:auto;max-height:80vh;aspect-ratio:16/9;object-fit:cover}
+.sobre-section{display:block!important;padding:72px 5%!important;background:transparent}
+.sobre-section .sobre-video{display:block;width:100%;max-width:1400px;height:auto;margin:0 auto;aspect-ratio:2.24/1;object-fit:cover;object-position:center;border-radius:14px;background:#111;box-shadow:0 18px 44px rgba(2,6,23,.18)}
+@media (max-width:760px){.sobre-section{padding:40px 16px!important}.sobre-section .sobre-video{border-radius:10px}}
 .prod-section .prod-title,.prod-hero h1{font-size:clamp(46px,5.4vw,66px);overflow-wrap:anywhere}
 .prod-grid{column-gap:clamp(24px,4vw,64px)}
 .prod-media video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
